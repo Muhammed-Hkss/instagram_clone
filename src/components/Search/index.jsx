@@ -11,7 +11,6 @@ const Search = ({setSearch}) => {
   // const [data, setData] = useState('');
 
 
-
   
 
   useEffect(() => {
@@ -20,11 +19,6 @@ const Search = ({setSearch}) => {
     })
   } , [])
 
-  // const logoutHandler =  (e) => {
-	// 	e.preventDefault()
-	// 	localStorage.clear()
-	// 	window.location.reload()
-	// }
 
   const debouncedSearchTerm = useDebounce(username, 400);
 
@@ -45,10 +39,6 @@ const Search = ({setSearch}) => {
 
   const SearchUsers = users && users.filter(item =>item.username.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ? item : null)
 
-
-  // const clearInput = () => {
-  //   setUsername('')
-  // };
 
 
 
@@ -93,8 +83,6 @@ const Search = ({setSearch}) => {
                   }
                   key={item.id}
                 >
-                  {/* <Link onClick={clearInput} to={`/users/${item.login}`}>{item.username}</Link> */}
-                  
                   {
                     item.avatar === null ? 
                     <img className={cls.profile_image} src="https://bazametrov.ru/uploads/new-agency/default_logo_user.jpg" alt="" /> : 

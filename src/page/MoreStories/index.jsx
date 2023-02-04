@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getMoreStories } from '../../config'
-import cls from './getMoreStories.module.scss'
+// import cls from './getMoreStories.module.scss'
 
 const MoreStories = () => {
   const accessToken = localStorage.getItem('accessToken');  

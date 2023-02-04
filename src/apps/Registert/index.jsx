@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import { signUp, Token } from '../../config'
 import FormButton from '../../hooks/FormButton'
-// import FormInput from '../../hooks/FormInput'
 import cls from './Register.module.scss'
 
 const Register = () => {
@@ -17,7 +16,6 @@ const Register = () => {
     register,
     handleSubmit,
 		formState: { isValid },
-    // reset,
   } = useForm({
     mode:'onChange'
   })
@@ -43,20 +41,9 @@ const Register = () => {
             navigate('/');
           }
         });
-        // if(r){
-        //   // localStorage.setItem('accessToken', r.data.access)
-        //   navigate('/account')
-        // }
+       
 			}
 		)
-    // if(data){
-    //   signUp(data).then(r => {
-    //     console.log(r);
-    //     if(r){
-    //       navigate('/')
-    //     }
-    //   })
-    // }
   };
 
 
@@ -74,11 +61,6 @@ const Register = () => {
           </h1>
           <p className={cls.register_form_logo}>Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</p>
           <div>
-            {/* {responseErrors && (
-              <span style={{ fontSize: 14, color: '#c72f31' }}>
-                Короткий пароль или Email уже существует
-              </span>
-            )} */}
             <p >
               Люди, которые пользуются нашим сервисом, могли загрузить вашу контактную информацию в Instagram. <Link to={'/detailed'}>Подробнее</Link>
             </p>

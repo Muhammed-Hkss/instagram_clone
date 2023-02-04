@@ -1,5 +1,5 @@
 import React from 'react'
-import cls from './Reels.module.scss'
+// import cls from './Reels.module.scss'
 
 const Reels = () => {
   return (

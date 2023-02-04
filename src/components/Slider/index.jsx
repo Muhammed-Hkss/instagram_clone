@@ -37,11 +37,9 @@ const Slider = () => {
 
   const accessToken = localStorage.getItem('accessToken');
   const [allStories, setAllStories] = React.useState(null);
-  // const [user, setUser] = React.useState(null);
   const navigate = useNavigate();
 
   console.log(allStories);
-  // console.log(user);
 
 
   React.useEffect(() => {

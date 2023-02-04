@@ -18,18 +18,7 @@ const Login = () => {
   })
 
 
-  // const onSubmit = (data) => {
-  //   if(data){
-  //     Token(data).then(r => {
-  //       if(r.data){
-  //         localStorage.setItem('accessToken', r.data.access);
-  //         localStorage.setItem('refreshToken', r.data.refresh);
-  //         navigate('/')
-  //       }
-  //     })
-  //     // .catch((e) => window.alert(e));
-  //   }
-  // }
+
 
 
 
