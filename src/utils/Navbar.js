@@ -1,5 +1,5 @@
-import {RiCompass3Line , RiMessengerLine , RiCompass3Fill , RiMessengerFill , RiSearch2Line , RiSearch2Fill , RiAccountCircleLine , RiAccountCircleFill} from 'react-icons/ri'
-import { AiOutlineHeart , AiOutlineHome , AiTwotoneHome , AiTwotoneHeart} from 'react-icons/ai'
+import {RiCompass3Line , RiCompass3Fill , RiSearch2Line , RiSearch2Fill , RiAccountCircleLine , RiAccountCircleFill} from 'react-icons/ri'
+import { AiOutlineHome , AiTwotoneHome } from 'react-icons/ai'
 import {BsPlusSquareFill , BsPlusSquare} from 'react-icons/bs'
 
 

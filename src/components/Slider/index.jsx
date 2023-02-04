@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { getStories, GetUsersId } from '../../config';
+import { getStories } from '../../config';
 import cls from './Slider.module.scss'
 
 
 const Slider = () => {
 
-  // const test = [
+
   //   {
   //     id:1,
   //     image:'https://images8.alphacoders.com/882/882408.jpg',
@@ -37,7 +37,7 @@ const Slider = () => {
 
   const accessToken = localStorage.getItem('accessToken');
   const [allStories, setAllStories] = React.useState(null);
-  const [user, setUser] = React.useState(null);
+  // const [user, setUser] = React.useState(null);
   const navigate = useNavigate();
 
   console.log(allStories);
@@ -66,11 +66,11 @@ const Slider = () => {
               alt=""
             />
             <span>
-              {
+              {/* {
                 user?.username.length >= 10
                   ? `${user?.username.slice(0, 9)}...`
                   : user?.username
-              }
+              } */}
             </span>
           </div>
         ))}

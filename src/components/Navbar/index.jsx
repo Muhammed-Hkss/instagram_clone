@@ -13,15 +13,15 @@ import Search from '../Search'
 function Navbar() {
   const [active, setActive] = useState('home')
   const [search, setSearch] = useState(false)
-  const [notif, setNotif] = useState(false)
+  // const [notif, setNotif] = useState(false)
   const [value, setValue] = useState('')
   const inputRef = useRef(null)
   const navigate = useNavigate()
 
-  const onClickClear = () => {
-    setValue('')
-    inputRef.current?.focus()
-  }
+  // const onClickClear = () => {
+  //   setValue('')
+  //   inputRef.current?.focus()
+  // }
 
   const isMobile = useMediaQuery({
     query: "(max-width: 770px)"
@@ -110,7 +110,7 @@ function Navbar() {
                       <a 
                           onClick={() => {
                             setSearch(item.setSearch)
-                            setNotif(false)
+                            // setNotif(false)
                             setActive(item.setActive)
                           }}
                           href={item.path}

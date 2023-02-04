@@ -1,6 +1,5 @@
-import {AiOutlineTable , AiFillHeart} from 'react-icons/ai'
+import {AiOutlineTable} from 'react-icons/ai'
 import {BsFillBookmarkFill} from 'react-icons/bs'
-import {CgProfile} from 'react-icons/cg'
 
 export const ProfileList = [
     {

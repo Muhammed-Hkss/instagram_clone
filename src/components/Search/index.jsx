@@ -20,11 +20,11 @@ const Search = ({setSearch}) => {
     })
   } , [])
 
-  const logoutHandler =  (e) => {
-		e.preventDefault()
-		localStorage.clear()
-		window.location.reload()
-	}
+  // const logoutHandler =  (e) => {
+	// 	e.preventDefault()
+	// 	localStorage.clear()
+	// 	window.location.reload()
+	// }
 
   const debouncedSearchTerm = useDebounce(username, 400);
 
@@ -46,9 +46,9 @@ const Search = ({setSearch}) => {
   const SearchUsers = users && users.filter(item =>item.username.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ? item : null)
 
 
-  const clearInput = () => {
-    setUsername('')
-  };
+  // const clearInput = () => {
+  //   setUsername('')
+  // };
 
 
 

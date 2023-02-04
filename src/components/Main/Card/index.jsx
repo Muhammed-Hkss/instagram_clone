@@ -12,7 +12,7 @@ const Card = () => {
   const accessToken = localStorage.getItem('accessToken')
   const [getPosts , setGetPosts] = useState('')
 
-  const [users , setUsers] = useState(null)
+  // const [users , setUsers] = useState(null)
   
   
   useEffect(() => {
@@ -45,9 +45,9 @@ const Card = () => {
                   <div className={cls.burger}>. . . </div>
               </div>
               <div className={cls.content_data}>
-                  {
+                  {/* {
                     item.user === users ? '1111' : '2222'
-                  }
+                  } */}
                   <img className={cls.content} src={item.post_images[0]?.image} alt="" />
               </div>
   

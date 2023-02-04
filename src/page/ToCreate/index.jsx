@@ -12,8 +12,8 @@ const ToCreate = () => {
   const [filePost, setFilePost] = React.useState(null)
   const [fileStory, setFileStory] = React.useState(null)
   const [value, setValue] = React.useState('')
-  const [url, setUrl] = React.useState('')
-  const Fr = new FileReader()
+  // const [url, setUrl] = React.useState('')
+  // const Fr = new FileReader()
 
   const handleCreatePost = () => {
     TocreatePost({title: value, post_images: [(filePost)]}, accessToken)
@@ -32,12 +32,12 @@ const ToCreate = () => {
 
 
 
-  const handleImageUpload = e => {
-    const [file] = e.target.files;
-    if (file) {
-      console.log(file);
-    }
-  };
+  // const handleImageUpload = e => {
+  //   const [file] = e.target.files;
+  //   if (file) {
+  //     console.log(file);
+  //   }
+  // };
 
 
 
