@@ -46,7 +46,7 @@ const Slider = () => {
     getStories(accessToken).then((r) => {
       setAllStories(r.data);
     });
-  }, []);
+  }, [accessToken]);
 
   return (
     <div className={cls.slider_container}>

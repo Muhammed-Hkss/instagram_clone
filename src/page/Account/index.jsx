@@ -20,7 +20,7 @@ const Profile = () => {
     GetUser(accessToken).then(r => {
       setUsers(r.data)
     })
-  } , [])
+  } , [accessToken])
 
 
   useEffect(() => {

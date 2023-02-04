@@ -16,7 +16,7 @@ const Search = ({setSearch}) => {
     GetUsers(accessToken).then(r => {
       setUsers(r.data)
     })
-  } , [])
+  } , [accessToken])
 
 
   const debouncedSearchTerm = useDebounce(username, 400);

@@ -25,7 +25,7 @@ const MoreStories = () => {
     getMoreStories(accessToken).then((r) => {
       setMoreStories(r.data?.user === Number(id) ? r.data : null);
     });
-  }, []);
+  }, [accessToken]);
 
   console.log(moreStories);
 
