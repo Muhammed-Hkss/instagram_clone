@@ -40,14 +40,13 @@ function App() {
         <Route path="/users/:id/subscribers" element={<Subscribers />} />
         <Route path="/users/:id/subscriptions" element={<Subscriptions />} />
         <Route path="/posts/:id" element={<MorePosts />} />
-        <Route path="*" element={<Main />} />
       </Routes>
     </div>
   ) : (
     <Routes>
       <Route path='/user/register' element={<Register/>} />
       <Route path='/auth/login' element={<Login/>} />
-      <Route path="*" element={<Navigate to={'/user/register'} />} />
+      <Route path="*" element={<Navigate to={'/auth/login'} />} />
     </Routes>
   );
 }

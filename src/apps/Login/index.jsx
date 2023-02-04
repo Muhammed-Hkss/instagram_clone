@@ -1,12 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import { GetUsers, Token } from '../../config'
+import { Token } from '../../config'
 import FormButton from '../../hooks/FormButton'
 import FormInput from '../../hooks/FormInput'
 import cls from './Login.module.scss'
 const Login = () => {
   const navigate = useNavigate()
+  
 
 
   const {
@@ -18,30 +19,16 @@ const Login = () => {
   })
 
 
-
-
-
-
-
-  const onSubmit = (data) => {
-    GetUsers()
-      .then((r) => {
-        localStorage.setItem(
-          'user',
-          JSON.stringify(r.data.find((item) => item.username === data.username)),
-        );
-        Token({ username: data.username, password: data.password }).then(r => {
-          if (r) {
-            localStorage.setItem('accessToken', r.data.access);
-          }
-          navigate('/');
-        });
+    const onSubmit = (data) => {
+    if(data){
+      Token(data).then(r => {
+        if(r.data){
+          localStorage.setItem('accessToken', r.data.access)
+          navigate('/')
+        }
       })
-      .catch((e) => window.alert(e));
-      window.location.reload();
-  };
-
-
+    }
+  }
 
   return (
     <div className={cls.container}>

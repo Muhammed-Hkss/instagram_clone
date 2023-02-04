@@ -16,7 +16,7 @@ const MoreStories = () => {
     
   useEffect(() => {
     getMoreStories(accessToken).then((r) => {
-      setMoreStories(r.data?.filter((item) => item?.id == Number(id))[0]);
+      setMoreStories(r.data?.filter((item) => item?.id === Number(id))[0]);
     });
   }, [accessToken , id]);
 

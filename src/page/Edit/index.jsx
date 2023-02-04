@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { putUser } from '../../config';
+import { GetUser, putUser } from '../../config';
 import cls from './Edit.module.scss';
 
 const Edit = () => {
@@ -13,14 +13,26 @@ const Edit = () => {
     mode: 'onBlur',
   });
 
-  const user = JSON.parse(localStorage.getItem('user'));
+
+  
+  // const user = JSON.parse(localStorage.getItem('user'));
   const accessToken = localStorage.getItem('accessToken');
-  const [passValue, setPassValue] = React.useState('');
-  const [repValue, setRepValue] = React.useState('');
+  const [passValue, setPassValue] = useState('');
+  const [repValue, setRepValue] = useState('');
   const navigate = useNavigate();
+  const [users , setUsers] = useState('')
+  
+
+  useEffect(() => {
+    GetUser(accessToken).then(r => {
+      setUsers(r.data)
+    })
+  } , [accessToken , users.id])
+
+  console.log(users);
 
   const onSubmit = (data) => {
-    putUser(user.id, data, accessToken).then((r) => {
+    putUser(users.id, data, accessToken).then((r) => {
       localStorage.setItem('user', JSON.stringify(r.data));
       navigate('/profile');
     });
@@ -34,7 +46,7 @@ const Edit = () => {
             <div>
               <img
                 src={
-                  user?.avatarka
+                  users?.avatarka
                     ? ''
                     : 'https://i.pinimg.com/280x280_RS/2e/45/66/2e4566fd829bcf9eb11ccdb5f252b02f.jpg'
                 }
@@ -42,7 +54,7 @@ const Edit = () => {
               />
             </div>
             <div className={cls.d_flex}>
-              <h2>{user?.username}</h2>
+              <h2>{users?.username}</h2>
               <input type="file" placeholder="Change profile photo" />
             </div>
           </div>
