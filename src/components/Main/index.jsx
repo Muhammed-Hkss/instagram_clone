@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-// import Navbar from '../Navbar'
+import React from 'react'
 import Recommendations from '../Recommendations'
 import Slider from '../Slider'
 import Card from './Card'
@@ -12,10 +11,6 @@ const Main = () => {
   return (
     
     <>
-      {/* <div>
-        <Navbar />
-      </div> */}
-
       <div className={cls.container}>
         
 

@@ -5,10 +5,7 @@ import cls from './ToCreate.module.scss'
 
 
 const ToCreate = () => {
-  // const onSubmit = () => {
-  //   PostPosts({title: value, post_images: [URL.createObjectURL(filePost)]}, accessToken)
-  //   .then(r => console.log(r.data))
-  // }
+
 
 
   const accessToken = localStorage.getItem('accessToken')

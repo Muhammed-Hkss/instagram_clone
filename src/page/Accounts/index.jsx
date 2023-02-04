@@ -4,7 +4,6 @@ import { AiOutlineSetting } from 'react-icons/ai'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ProfileList } from '../../utils/Account'
 import { getPostsOfTheUser, GetUsersId, postFollow, unFollow } from '../../config'
-// import Test from '../../Test/test'
 import { BASE_URL } from '../../config/api'
 
 const Accounts = () => {

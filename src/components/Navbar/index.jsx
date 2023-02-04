@@ -1,6 +1,6 @@
 import cls from './Navbar.module.scss'
 import {BiLogOut } from 'react-icons/bi'
-import {AiOutlineInstagram , AiFillHeart , AiOutlineHeart} from 'react-icons/ai'
+import {AiOutlineInstagram , AiOutlineHeart} from 'react-icons/ai'
 import {BsSearch} from 'react-icons/bs'
 import React, { useRef, useState } from 'react'
 import { NavbarList } from '../../utils/Navbar'

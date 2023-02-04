@@ -45,9 +45,6 @@ const MorePosts = () => {
 
 
   return (
-    // <div style={{display:'flex' , justifyContent:'center'}}>
-    //   xcfbdsbndfgbdsxbds
-    // </div>
     <div className={cls.post_card_data}>
       <div className={cls.post_card_right}>
         <img
@@ -112,12 +109,6 @@ const MorePosts = () => {
             <div className={cls.count_of_likes}>
               <span>{data?.liked?.length} likes</span>
             </div>
-            {/* <div>
-              <p>
-                <span onClick={() => navigate(`/users/${data?.user}`)}>user</span> ​{data?.title}
-                <span>... more</span>
-              </p>
-            </div> */}
           </div>
           <div className={cls.comment_block}>
             <input 

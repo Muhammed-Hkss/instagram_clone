@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import cls from './Search.module.scss'
-import { Link, useNavigate} from 'react-router-dom'
-import { api, GetUsers } from '../../config'
+import { useNavigate} from 'react-router-dom'
+import { GetUsers } from '../../config'
 
 const Search = ({setSearch}) => {
   const accessToken = localStorage.getItem('accessToken')
   const navigate = useNavigate()
   const [users , setUsers] = useState(null)
   const [username, setUsername] = useState("");
-  const [data, setData] = useState('');
+  // const [data, setData] = useState('');
 
 
 

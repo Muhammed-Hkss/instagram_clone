@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import { api, signUp, Token } from '../../config'
+import { signUp, Token } from '../../config'
 import FormButton from '../../hooks/FormButton'
-import FormInput from '../../hooks/FormInput'
+// import FormInput from '../../hooks/FormInput'
 import cls from './Register.module.scss'
 
 const Register = () => {
@@ -16,8 +16,8 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-		formState: { errors, isValid },
-    reset,
+		formState: { isValid },
+    // reset,
   } = useForm({
     mode:'onChange'
   })

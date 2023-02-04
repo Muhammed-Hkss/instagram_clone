@@ -1,18 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineSetting } from 'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom'
-import { api, DeletePosts, GetUser } from '../../config'
+import { useNavigate } from 'react-router-dom'
+import { GetUser } from '../../config'
 import { ProfileList } from '../../utils/Account'
-import { getLikedUser, getPostsOfTheUser } from '../../config/index';
+import {  getPostsOfTheUser } from '../../config/index';
 import cls from './Account.module.scss'
-import Test from '../../Test/test'
 
 
 const Profile = () => {
   const accessToken = localStorage.getItem('accessToken');
   const data = JSON.parse(localStorage.getItem('user'));
   const [posts, setPosts] = React.useState(null);
-  const [liked, setLiked] = React.useState(null)
+  // const [liked, setLiked] = React.useState(null)
   const [active, setActive] = React.useState('posts');
   const [users , setUsers] = useState('')
   const navigate = useNavigate()
@@ -37,22 +36,6 @@ const Profile = () => {
 
   return (
     <div className={cls.container}>
-
-
-
-      {/* <button
-        // onClick={setOpen(true)}
-        onClick={() => {setOpen(!open)}}
-      >
-        cdfhdghsdhdfhd
-      </button> */}
-
-      {/* <Test
-        open={open}
-        setOpen ={setOpen}
-      /> */}
-
-
       <div className={cls.profile_header_data}>
         <div className={cls.profile_image_data}>
           {
@@ -76,8 +59,6 @@ const Profile = () => {
           </div>
           <div className={cls.publications_data}>
             <p style={{cursor:'pointer'}}>{posts?.length} публикаций</p>
-            {/* <p>{users?.subscribers} подписчики </p>
-            <p>{users?.subscriptions } подписки </p> */}
 
 
 
@@ -85,7 +66,6 @@ const Profile = () => {
             <span onClick={() => 
                 users?.subscribers !== 0 &&
                 navigate(`/users/${users?.id}/subscribers`)
-                // setOpen(!open)
               }
             >
               <p style={{cursor:'pointer'}}>{users?.subscribers} подписчики</p> 

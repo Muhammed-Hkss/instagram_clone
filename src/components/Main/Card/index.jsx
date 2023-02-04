@@ -5,8 +5,7 @@ import { MdFavoriteBorder } from 'react-icons/md'
 import { TbMessageCircle } from 'react-icons/tb'
 import { BsBookmark } from 'react-icons/bs'
 import { FaRegSmile } from 'react-icons/fa'
-import { api, DeletePosts, GetPosts } from '../../../config'
-import axios from 'axios'
+import { GetPosts } from '../../../config'
 
 
 const Card = () => {
@@ -34,7 +33,6 @@ const Card = () => {
 
           return(
             <div key={item.id}>
-              {/* <button onClick={() => DeletePosts(item.id , accessToken)}>delete</button> */}
               <div className={cls.header}>
                   <div className={cls.userLogo_data}>
                     <img className={cls.userLogo} src={item.plofileImage} alt="" />
@@ -51,7 +49,6 @@ const Card = () => {
                     item.user === users ? '1111' : '2222'
                   }
                   <img className={cls.content} src={item.post_images[0]?.image} alt="" />
-                  {/* <video className={cls.video} src={Video} autoPlay muted loop /> */}
               </div>
   
               <div className={cls.communication}>
