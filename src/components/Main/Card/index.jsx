@@ -19,9 +19,7 @@ const Card = () => {
     GetPosts(accessToken).then(r => {
       setGetPosts(r.data)
     })
-
-
-  } , [])
+  } , [accessToken])
 
 
 

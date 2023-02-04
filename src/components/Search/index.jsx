@@ -8,7 +8,6 @@ const Search = ({setSearch}) => {
   const navigate = useNavigate()
   const [users , setUsers] = useState(null)
   const [username, setUsername] = useState("");
-  // const [data, setData] = useState('');
 
 
   
