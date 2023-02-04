@@ -66,16 +66,14 @@ const ToCreate = () => {
                 onChange={e => setFile(e.target.files[0])}
               />
               
-              {/* <textarea value={value} onInput={e => setValue(e.target.value)} placeholder='Write a description'></textarea>
 
-              <button  onClick={handleCreatePost}>Share</button> */}
 
             {
               file && (
                 <>
                   <div className={cls.post_title_data}>
                     <textarea value={value} onInput={e => setValue(e.target.value)} placeholder='Write a description'></textarea>
-                    <button disabled={value.length <= 1} onClick={handleCreatePost}>Share</button>
+                    <button disabled={value.length <= 1} onClick={handleCreatePost}>Create</button>
                   </div>
                 </>
               )

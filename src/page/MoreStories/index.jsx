@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { deleteStory, getMoreStories } from '../../config'
+import { getMoreStories } from '../../config'
 import { BiX } from 'react-icons/bi';
 import cls from './getMoreStories.module.scss'
 
@@ -22,9 +22,9 @@ const MoreStories = () => {
 
 
 
-  const Del_Story = (id) => {
-    deleteStory(id, accessToken);
-  };
+  // const Del_Story = (id) => {
+  //   deleteStory(id, accessToken);
+  // };
 
 
 
