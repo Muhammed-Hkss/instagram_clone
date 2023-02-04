@@ -19,3 +19,13 @@
 8) logi nve register ici nvalidatsa
 
 9) adaptivka site
+
+
+
+
+"eslintConfig": {
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+},

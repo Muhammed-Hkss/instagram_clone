@@ -24,7 +24,7 @@ const Profile = () => {
 
 
   useEffect(() => {
-    getPostsOfTheUser().then(r => {
+    getPostsOfTheUser(data.id).then(r => {
       setPosts(r.data)
     })
   } , [])
