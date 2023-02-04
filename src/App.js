@@ -11,7 +11,7 @@ import Interesting from './page/Interesting';
 import Messages from './page/Messages/Messages';
 import MorePosts from './page/MorePosts';
 import MoreStories from './page/MoreStories';
-import Notifications from './page/Notifications';
+// import Notifications from './page/Notifications';
 import Reels from './page/Reels/Reels';
 import Subscribers from './page/Subscribers';
 import Subscriptions from './page/Subscriptions';
@@ -30,7 +30,7 @@ function App() {
         <Route path='/account' element={<Profile/>} />
         <Route path='/account/edit' element={<Edit/>} />
         <Route path='/ToCreate' element={<ToCreate/>} />
-        <Route path='/notifications' element={<Notifications/>} />
+        {/* <Route path='/notifications' element={<Notifications/>} /> */}
         <Route path='/reels' element={<Reels/>} />
         <Route path='/messages' element={<Messages/>} />
         <Route path='/interesting' element={<Interesting/>} />
