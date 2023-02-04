@@ -13,7 +13,7 @@ const Subscribers = () => {
         setData(r.data)
       );
       
-    }, []);
+    }, [id]);
 
     console.log(data);
 

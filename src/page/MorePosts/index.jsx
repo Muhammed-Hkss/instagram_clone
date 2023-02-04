@@ -23,7 +23,7 @@ const MorePosts = () => {
 
   useEffect(() => {
     getSinglePost(id, accessToken).then((r) => setData(r.data));
-  }, [accessToken]);
+  }, [accessToken , id]);
 
   const handleLike = (id) => {
     postLike({ post: Number(id) }, accessToken);

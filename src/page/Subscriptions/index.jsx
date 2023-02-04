@@ -13,7 +13,7 @@ const Subscriptions = () => {
       getFollowings(id).then((r) => 
         setData(r.data)
       );
-    }, []);
+    }, [id]);
 
     console.log(data);
 

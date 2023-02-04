@@ -21,7 +21,7 @@ const Accounts = () => {
     GetUsersId(id).then(r => {
       setUsers(r.data)
     })
-  } , [])
+  } , [id])
 
 
 
@@ -29,7 +29,7 @@ const Accounts = () => {
     getPostsOfTheUser(id).then(r => {
       setPosts(r.data)
     })
-  } , [])
+  } , [id])
 
 
   // const to__follow = () => {
