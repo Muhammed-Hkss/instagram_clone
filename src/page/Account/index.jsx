@@ -11,7 +11,6 @@ const Profile = () => {
   const accessToken = localStorage.getItem('accessToken');
   const data = JSON.parse(localStorage.getItem('user'));
   const [posts, setPosts] = React.useState(null);
-  // const [liked, setLiked] = React.useState(null)
   const [active, setActive] = React.useState('posts');
   const [users , setUsers] = useState('')
   const navigate = useNavigate()
@@ -25,7 +24,7 @@ const Profile = () => {
 
 
   useEffect(() => {
-    getPostsOfTheUser(data.id).then(r => {
+    getPostsOfTheUser().then(r => {
       setPosts(r.data)
     })
   } , [])
