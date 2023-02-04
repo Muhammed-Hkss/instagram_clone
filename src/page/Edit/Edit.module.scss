@@ -28,7 +28,6 @@
         .d_flex {
           display: flex;
           flex-direction: column;
-          // align-items: start;
           gap: 0;
 
           h2 {
@@ -42,7 +41,6 @@
 
           input {
             background: none;
-            // color: rgba(0, 149, 246, 0.6);
             outline: 0;
             border: 0;
             width: 220px;

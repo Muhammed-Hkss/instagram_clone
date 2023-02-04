@@ -8,14 +8,12 @@ const Edit = () => {
   const {
     register,
     handleSubmit,
-    // formState: { isValid },
   } = useForm({
     mode: 'onBlur',
   });
 
 
   
-  // const user = JSON.parse(localStorage.getItem('user'));
   const accessToken = localStorage.getItem('accessToken');
   const [passValue, setPassValue] = useState('');
   const [repValue, setRepValue] = useState('');
@@ -137,7 +135,6 @@ const Edit = () => {
           </div>
           <div className={cls.btn_data}>
             <button
-              // disabled={!isValid || passValue !== repValue || passValue.length <= 8}
               type="submit"
               className={cls.btn}>
               Changed
@@ -145,7 +142,6 @@ const Edit = () => {
           </div>
         </form>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

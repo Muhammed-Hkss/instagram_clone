@@ -8,7 +8,6 @@ import { BASE_URL } from '../../config/api'
 
 const Accounts = () => {
   const accessToken = localStorage.getItem('accessToken')
-  // const user = JSON.parse(localStorage.getItem('user'))
   const [users , setUsers] = useState(null)
   const [posts, setPosts] = React.useState(null);
   const [active, setActive] = React.useState('posts');
@@ -30,19 +29,6 @@ const Accounts = () => {
       setPosts(r.data)
     })
   } , [id])
-
-
-  // const to__follow = () => {
-  //   if(accessToken){
-  //     postFollow({to_user: Number(id)}, accessToken )
-  //     .then((r) => {
-  //       if (r) {
-  //         setFollow(true);
-  //         localStorage.setItem('user', {...user, subscribers: user.subscribers+1})
-  //       }
-  //     });
-  //   }
-  // }
 
 
   const to__follow = () => {
@@ -160,7 +146,6 @@ console.log(follow);
               console.log(item.post_images[0]?.image);
               return(
               <div className={cls.posts} onClick={() => navigate(`/posts/${item.id}`)} key={item.id}>
-                {/* <button onClick={() => DeletePosts(item.id)}>delete posts</button> */}
                 {
                   item.post_images?.length >=1 ?
                   <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :

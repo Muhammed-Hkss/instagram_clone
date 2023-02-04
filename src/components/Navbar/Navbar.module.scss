@@ -14,14 +14,12 @@
 
   .sidebare{
     position: fixed;
-    // top: 0;
     left: 0;
     height: 100%;
     border-right: 1px solid #dbdbdb  ;
     background-color: white;
     width: 245px;
     padding: 6px 14px;
-    // transition: all .5s ease;
     z-index: 10;
 
     &.active{
@@ -32,7 +30,6 @@
       width: 78px;
       border-right: 1px solid #dbdbdb  ;
       padding: 6px 14px;
-      // transition: all .5s ease;
       z-index: 10;
 
 
@@ -68,7 +65,6 @@
             align-items: center;
             text-decoration: none;
             border-radius: 12px;
-            // transition: all .2s ease;
             white-space: nowrap;
     
             &:hover{
@@ -99,7 +95,6 @@
     
     .logo_data{
       position: relative;
-      // left: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -116,7 +111,6 @@
       text-align: center;
       line-height: 50px;
       transform: translate(-50%);
-      // transition: all .4s ease;
       cursor: pointer;
     }
   
@@ -165,7 +159,6 @@
         position: relative;
         list-style: none;
         height: 50px;
-        // width: 100%;
         line-height: 50px ;
         margin: 10px 0; 
         cursor: pointer;
@@ -178,7 +171,6 @@
           align-items: center;
           text-decoration: none;
           border-radius: 12px;
-          // transition: all .2s ease;
           white-space: nowrap;
   
           &:hover{
@@ -318,16 +310,10 @@
           gap: 10px;
 
           input {
-            // width: 100px;
             border: 0;
             outline: 0;
             background: none;
           }
-          
-          // svg {
-          //   color: gray;
-          //   cursor: pointer;
-          // }
         }
 
         .like_data{
@@ -338,6 +324,51 @@
           }
         }
       }
+      .search_users_data{
+        position: absolute;
+        left: 0;
+        top: 32px;
+        z-index: 10;
+        width: 100%;
+        background-color: #aaaaaa;
+        height: 300px;
+        overflow-x: hidden;
+    
+        li{
+          display: flex;
+          list-style: none;
+          cursor: pointer;
+          padding: 0 20px;
+          gap: 10px;
+          height: 50px;
+    
+    
+          .profile_image{
+            width: 40px;
+            height: 40px;
+            border: 1px solid #aaaaaa;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+    
+          a{
+            text-decoration: none;
+          }
+        }
+      }
+    
+      .search_users_data::-webkit-scrollbar{
+        width: 20px;
+      }
+      .search_users_data::-webkit-scrollbar-track{
+        background: transparent;
+      }
+      .search_users_data::-webkit-scrollbar-thumb{
+        background-color: #aaaaaa;
+        border-radius: 20px;
+        background-clip: content-box;
+        border: 6px solid transparent;
+      }
     }
 
 
@@ -347,7 +378,6 @@
       width: 100%;
       height: 50px;
       border-top: solid 1px #dbdbdb;
-      // padding: 6px 14px;
 
       .logo_data{
         display: none;
@@ -359,7 +389,6 @@
         justify-content: center;
         align-items: center;
         gap: 3rem;
-        // top: 10px;
         margin: 0;
         padding: 0;
 
@@ -370,8 +399,6 @@
           a{
             color: #000;
             text-decoration: none;
-            // transition: all .2s ease;
-            // white-space: nowrap;
 
             span{ 
               display: none;

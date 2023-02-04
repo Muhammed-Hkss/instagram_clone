@@ -9,7 +9,6 @@ const ToCreate = () => {
 
 
   const accessToken = localStorage.getItem('accessToken')
-  // const [filePost, setFilePost] = React.useState(null)
 
 
   const [ file, setFile ] = React.useState(null)

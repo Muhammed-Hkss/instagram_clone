@@ -20,19 +20,6 @@ const Subscriptions = () => {
   if(!data) return <div><h1>ssdsddsddfhdfhhdf</h1></div>
   return (
     <div>
-      {/* <div className="subscriptions">
-        {data?.length >= 1 &&
-          data?.map((obj) => (
-            <div key={obj?.id} onClick={() => navigate(`/users/${obj?.to_user}`)}>
-              <img
-                src="https://i.pinimg.com/280x280_RS/2e/45/66/2e4566fd829bcf9eb11ccdb5f252b02f.jpg"
-                alt=""
-              />
-              <span>user</span>
-            </div>
-        ))}
-      </div> */}
-
       <div className={cls.container}>
         <div  className={cls.subscriptions_data}>
 

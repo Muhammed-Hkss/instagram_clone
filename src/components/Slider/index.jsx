@@ -7,34 +7,6 @@ import cls from './Slider.module.scss'
 const Slider = () => {
 
 
-  //   {
-  //     id:1,
-  //     image:'https://images8.alphacoders.com/882/882408.jpg',
-  //     title:'almazesh_'
-  //   },
-  //   {
-  //     id:2,
-  //     image:'https://i.pinimg.com/originals/b0/b6/8b/b0b68bc6dfd21f9df09802be25b9162e.jpg',
-  //     title:'sytfadp'
-  //   },
-  //   {
-  //     id:3,
-  //     image:'https://img2.goodfon.ru/original/1280x1024/a/1e/renault-megane-trophy-yellow.jpg',
-  //     title:'itacademy.kg'
-  //   },
-  //   {
-  //     id:4,
-  //     image:'https://s1.1zoom.me/big7/625/BUGATTI_2005-11_Bugatti_Veyron_Black_526459_2560x1706.jpg',
-  //     title:'uras.benlioglu'
-  //   },
-  //   {
-  //     id:5,
-  //     image:'https://pbs.twimg.com/media/C4Rhg1-UEAAE_Hb?format=jpg&name=medium',
-  //     title:'bmwkg'
-  //   },
-  // ]
-  // getStories
-
   const accessToken = localStorage.getItem('accessToken');
   const [allStories, setAllStories] = React.useState(null);
   const navigate = useNavigate();

@@ -2,34 +2,59 @@ import cls from './Navbar.module.scss'
 import {BiLogOut } from 'react-icons/bi'
 import {AiOutlineInstagram , AiOutlineHeart} from 'react-icons/ai'
 import {BsSearch} from 'react-icons/bs'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavbarList } from '../../utils/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import Search from '../Search'
-// import Notif from '../Notifications'
+import { GetUsers } from '../../config'
 
 
 function Navbar() {
   const [active, setActive] = useState('home')
   const [search, setSearch] = useState(false)
-  // const [notif, setNotif] = useState(false)
-  const [value, setValue] = useState('')
-  const inputRef = useRef(null)
+  // const [value, setValue] = useState('')
+  // const inputRef = useRef(null)
+  const accessToken = localStorage.getItem('accessToken')
   const navigate = useNavigate()
+  const [users , setUsers] = useState(null)
+  const [username, setUsername] = useState("");
 
-  // const onClickClear = () => {
-  //   setValue('')
-  //   inputRef.current?.focus()
-  // }
+
+  
+
+  useEffect(() => {
+    GetUsers(accessToken).then(r => {
+      setUsers(r.data)
+    })
+  } , [accessToken])
+
+
+  const debouncedSearchTerm = useDebounce(username, 400);
+
+  function useDebounce(value, delay) {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+    
+  
+    useEffect(() => {
+        const handler = setTimeout(() => {
+          setDebouncedValue(value);
+        }, delay);
+        return () => {
+          clearTimeout(handler);
+        };
+      },[value, delay]);
+    return debouncedValue;
+  }
+
+  const SearchUsers = users && users.filter(item =>item.username.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ? item : null)
+  
+  console.log(SearchUsers);
 
   const isMobile = useMediaQuery({
     query: "(max-width: 770px)"
   })
 
-  // const isTablet = useMediaQuery({
-  //   query: "(max-width: 1265px)"
-  // }) 
 
 
 
@@ -65,19 +90,59 @@ function Navbar() {
 
             <div className={cls.search_block}>
               <div className={cls.search}>
-                  <BsSearch />
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    onChange={(e) => setValue(e.target.value)}
-                    ref={inputRef}
-                    value={value}
-                  />
+                <BsSearch />
+                <input
+                  type="text"
+                  placeholder="Search"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
+                />
               </div>
               <div className={cls.like_data}>
                 <AiOutlineHeart />
               </div>
             </div>
+            <ul  className={cls.search_users_data}>
+              {
+              debouncedSearchTerm.length < 3 ? '' :
+                SearchUsers.length < 3 ?
+
+
+                SearchUsers && SearchUsers.map(item => {
+                    return(
+                      <li 
+                        onClick={() => 
+                          navigate(`/users/${item.id}` , setSearch(false))
+                        }
+                        key={item.id}
+                      >
+                        <p>{item.username}</p>
+                      </li>
+                    )
+                }) : 
+                
+                SearchUsers && SearchUsers.map(item => {
+                    return(
+                      <li 
+                        onClick={() => 
+                          navigate(`/users/${item.id}` , setSearch(false))
+                        }
+                        key={item.id}
+                      >
+                        {
+                          item.avatar === null ? 
+                          <img className={cls.profile_image} src="https://bazametrov.ru/uploads/new-agency/default_logo_user.jpg" alt="" /> : 
+                          <img className={cls.profile_image} src={item.avatar} alt="" />
+                        }
+                        <div>
+                          <p>{item.username}</p>
+                          <p>{item.bio}</p>
+                        </div> 
+                      </li>
+                    )
+                })
+              }
+            </ul>
 
 
           </div>
@@ -110,7 +175,6 @@ function Navbar() {
                       <a 
                           onClick={() => {
                             setSearch(item.setSearch)
-                            // setNotif(false)
                             setActive(item.setActive)
                           }}
                           href={item.path}

@@ -13,13 +13,6 @@ const Main = () => {
     <>
       <div className={cls.container}>
         
-
-
-
-
-
-
-
         <div className={cls.slider_card}>
           <Slider />
           <Card />

@@ -1,18 +1,15 @@
 .recommend_container{
   width: 100%;
   height: 40vh;
-  // background-color: rgb(179, 4, 4);
 
   .header{
     display: flex;
     width: 100%;
     height: 60px;
-    // border-bottom: 1px solid #dbdbdb;
     padding: 15px 20px;
     box-sizing: border-box;
 
     .userLogo{
-      // border-radius: 50%;
       margin-right: 20px;
 
 
@@ -29,10 +26,6 @@
 
       .userName{
         font-weight: 700;
-      }
-
-      .userPosition{
-
       }
     }
 

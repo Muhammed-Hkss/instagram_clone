@@ -22,14 +22,6 @@ const MoreStories = () => {
 
 
 
-  // const Del_Story = (id) => {
-  //   deleteStory(id, accessToken);
-  // };
-
-
-
-  console.log(moreStories);
-
   return (
     <div className={cls.container_more_story}>
       <div className={cls.row}>

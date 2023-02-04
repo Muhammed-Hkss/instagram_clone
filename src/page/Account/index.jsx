@@ -10,7 +10,6 @@ import { BASE_URL } from '../../config/api'
 
 const Profile = () => {
   const accessToken = localStorage.getItem('accessToken');
-  // const data = JSON.parse(localStorage.getItem('user'));
   const [posts, setPosts] = React.useState(null);
   const [active, setActive] = React.useState('posts');
   const [users , setUsers] = useState('')
@@ -30,7 +29,6 @@ const Profile = () => {
     })
   } , [users.id])
 
-  // console.log(users.id);
 
   return (
     <div className={cls.container}>
@@ -76,17 +74,6 @@ const Profile = () => {
             >
               <p style={{cursor:'pointer'}}>{users?.subscriptions} подписки</p> 
             </span>
-
-
-
-
-
-
-
-
-
-
-
 
 
           </div>
