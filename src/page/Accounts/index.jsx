@@ -8,7 +8,7 @@ import { BASE_URL } from '../../config/api'
 
 const Accounts = () => {
   const accessToken = localStorage.getItem('accessToken')
-  const user = JSON.parse(localStorage.getItem('user'))
+  // const user = JSON.parse(localStorage.getItem('user'))
   const [users , setUsers] = useState(null)
   const [posts, setPosts] = React.useState(null);
   const [active, setActive] = React.useState('posts');

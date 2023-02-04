@@ -27,7 +27,7 @@ const Profile = () => {
     getPostsOfTheUser(data.id).then(r => {
       setPosts(r.data)
     })
-  } , [])
+  } , [data.id])
 
 
 
