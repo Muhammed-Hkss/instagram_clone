@@ -5,6 +5,7 @@ import { GetUser } from '../../config'
 import { ProfileList } from '../../utils/Account'
 import {  getPostsOfTheUser } from '../../config/index';
 import cls from './Account.module.scss'
+import { BASE_URL } from '../../config/api'
 
 
 const Profile = () => {
@@ -121,17 +122,11 @@ const Profile = () => {
         {
           posts?.map(item => (
             <div className={cls.posts} onClick={() => navigate(`/posts/${item.id}`)} key={item.id}>
-              {/* <button onClick={() => DeletePosts(item.id)}>delete posts</button> */}
-              <img
-                src={
-                  item.post_images?.length >= 1 ?
-              
-                  item.post_images[0]?.image : 
-                  'https://kartinkin.net/uploads/posts/2021-07/1625153619_35-kartinkin-com-p-anime-van-pis-anime-krasivo-55.jpg'
-                  // 'https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg'
+              {
+                  item.post_images?.length >=1 ?
+                  <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
+                  <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
                 }
-                alt="404"
-              />
             </div>
           ))
         }

@@ -1,0 +1,37 @@
+.container_more_story{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 2rem;
+
+  .row{
+    border: 1px solid gray;
+    padding: 20px;
+
+    .header_storry{
+
+      .user_avatar_data{
+
+        .avatar{
+          width: 70px;
+          height: 70px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      .bix_btn_data{
+        
+      }
+    }
+
+    .image_data{
+  
+      img{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+}

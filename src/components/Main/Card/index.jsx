@@ -12,8 +12,6 @@ const Card = () => {
   const accessToken = localStorage.getItem('accessToken')
   const [getPosts , setGetPosts] = useState('')
 
-  // const [users , setUsers] = useState(null)
-  
   
   useEffect(() => {
     GetPosts(accessToken).then(r => {
@@ -29,6 +27,7 @@ const Card = () => {
       {
         getPosts && getPosts.map(item => {
 
+
           return(
             <div key={item.id}>
               <div className={cls.header}>
@@ -43,10 +42,11 @@ const Card = () => {
                   <div className={cls.burger}>. . . </div>
               </div>
               <div className={cls.content_data}>
-                  {/* {
-                    item.user === users ? '1111' : '2222'
-                  } */}
-                  <img className={cls.content} src={item.post_images[0]?.image} alt="" />
+                  {
+                  item.post_images?.length >=1 ?
+                  <img className={cls.content} src={item.post_images[0]?.image} alt="404" /> :
+                  <img className={cls.content} src='https://i.ytimg.com/vi/nrRM4XHJPMM/maxresdefault.jpg' alt="505" />
+                }
               </div>
   
               <div className={cls.communication}>

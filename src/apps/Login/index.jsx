@@ -30,14 +30,15 @@ const Login = () => {
           'user',
           JSON.stringify(r.data.find((item) => item.username === data.username)),
         );
-        Token({ username: data.username, password: data.password }).then((r) => {
+        Token({ username: data.username, password: data.password }).then(r => {
           if (r) {
             localStorage.setItem('accessToken', r.data.access);
-            navigate('/');
           }
+          navigate('/');
         });
       })
       .catch((e) => window.alert(e));
+      window.location.reload();
   };
 
 

@@ -26,11 +26,12 @@ function App() {
     <div className="App_container">
       <Navbar />
       <Routes>
+
+
         <Route path='/' element={<Main/>} />
         <Route path='/account' element={<Profile/>} />
         <Route path='/account/edit' element={<Edit/>} />
         <Route path='/ToCreate' element={<ToCreate/>} />
-        {/* <Route path='/notifications' element={<Notifications/>} /> */}
         <Route path='/reels' element={<Reels/>} />
         <Route path='/messages' element={<Messages/>} />
         <Route path='/interesting' element={<Interesting/>} />
