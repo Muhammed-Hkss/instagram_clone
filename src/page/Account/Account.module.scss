@@ -1,0 +1,158 @@
+.container{
+  position: relative;
+  width: 87%;
+  left: 13%;
+  top: 1rem;
+
+  .profile_header_data{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    margin: auto;
+    gap: 50px;
+    width: 50%;
+
+    .profile_image_data{
+
+      .profile_image{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+
+    .profile_text_data{
+      position: relative;
+      display: grid;
+      align-items: center;
+
+
+      .user_name_data{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .user_name_button_data{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .user_name_button{
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover{
+              background-color: rgb(194, 192, 192);
+            }
+          }
+          
+          .user_setting_btn{
+            width: 27px;
+            height: 27px;
+
+            cursor: pointer;
+          }
+        } 
+      }
+
+      .publications_data{
+        display: flex;
+        gap: 20px;
+
+        p{
+          font-size: 14px;
+        }
+      }
+
+
+      .about_profile_data{
+        position: relative;
+      }
+    }
+  }
+
+  .profile_list_data {
+    margin-top: 3rem;
+    border-top: 1px solid rgb(219, 219, 219);
+    width: 50%;
+    margin: auto;
+
+    
+
+
+    .profile_list {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+
+
+
+      .span{
+        position: relative;
+        top: 10px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Helvetica , Arial , sans-serif;
+        height: 52px;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgb(142, 142, 142);
+        cursor: pointer;
+      }
+      .span_active{
+        padding: 10px 0 0 0 ;
+        border-top: 1px solid rgb(38, 38, 38);
+        color: rgb(38, 38, 38);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .posts_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px ;
+
+    .posts {
+
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media(max-width: 1024px){
+  .container{
+    width: 100%;
+    left: 1px;
+
+    .profile_header_data{
+      justify-content: center;
+
+    }
+  }
+}
+
+
+@media(max-width:555px){
+  .container{
+
+    .profile_header_data{
+      display: grid;
+      justify-content: center;
+  
+      .profile_image_data{
+        display: flex;
+        justify-content: center ;
+          
+      }
+    }
+  }
+}

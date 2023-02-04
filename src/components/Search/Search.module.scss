@@ -1,0 +1,91 @@
+.right_navbar{
+  position: fixed;
+  top: 0;
+  left: 78px;
+  height: 100%;
+  width: 390px;
+  border-right: 1px solid #dbdbdb  ;
+  background-color: white;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.459);
+  transition: all .5s ease;
+  border-radius: 0 20px 20px 0px;
+  z-index: 10;
+
+  .left_navbar_logo{
+    text-align: center;
+    width: 70%;
+    font-weight: 500;
+  }
+
+  .input_data{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px 0px;
+    top: 20px;
+
+    input{
+      margin-top: 10px;
+      padding:10px;
+      width: 90%;
+      border-radius: 6px;
+      background: #e8e7e7;
+      color: rgb(83, 81, 81);
+      outline: none;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      // cursor: pointer;
+
+      &::placeholder{
+        font-weight: 200;
+      }
+    }
+  }
+
+  .search_users_data{
+    position: relative;
+    display: grid;
+    top: 20px;
+    width: 100%;
+    height: 800px;
+    // gap: 20px;
+    overflow-x: hidden;
+
+    li{
+      display: flex;
+      list-style: none;
+      cursor: pointer;
+      padding: 0 20px;
+      gap: 10px;
+      height: 50px;
+
+
+      .profile_image{
+        width: 40px;
+        height: 40px;
+        border: 1px solid #aaaaaa;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+
+  .search_users_data::-webkit-scrollbar{
+    width: 20px;
+  }
+  .search_users_data::-webkit-scrollbar-track{
+    background: transparent;
+  }
+  .search_users_data::-webkit-scrollbar-thumb{
+    background-color: #aaaaaa;
+    border-radius: 20px;
+    background-clip: content-box;
+    border: 6px solid transparent;
+  }
+}

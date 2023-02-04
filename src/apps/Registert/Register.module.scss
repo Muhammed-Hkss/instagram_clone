@@ -1,0 +1,76 @@
+.container{
+  width: 1800px;
+  margin: auto;
+
+  .row{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 6rem;
+    gap: 10px;
+
+    .register_form{
+      text-align: center;
+      width: 300px;
+      border: 1px solid #a4a4a4;
+      padding: 20px;
+  
+      .register_form_logo{
+        color: white
+      }
+
+      .register_input_data{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        input{
+          width: 90%;
+          padding: 10px;
+          border: none;
+          border: 1px solid #a4a4a4;
+          color: #5b5b5b;
+          outline: none;
+        }
+      }
+
+      p{
+        color: gray;
+        font-size: 14px;
+      }
+
+    }
+  
+    .register_route_data{
+      text-align: center;
+      width: 300px;
+      border: 1px solid #a4a4a4;
+      padding: 20px;
+    }
+    
+    .dowlooad_image_data{
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+  
+      .dowlooad_image{
+        width: 120px;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+  
+@media(max-width:1790px){
+  .container{
+    width: 100%;
+  }
+}
+  
+  
+  

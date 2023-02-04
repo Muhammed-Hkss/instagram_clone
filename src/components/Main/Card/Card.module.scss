@@ -1,0 +1,138 @@
+.card{
+  display: grid;
+  gap: 30px;
+  width: 472px;
+  margin: 50px 0;
+
+
+
+  .header{
+    display: flex;
+    // width: 100%;
+    height: 60px;
+    // border-bottom: 1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
+
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    .userLogo_data{
+      margin-right: 20px;
+
+      .userLogo{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+
+      }
+    }
+    
+    .userData{
+      margin-right:auto ;
+
+      .userName{
+        font-weight: 700;
+      }
+
+      .userPosition{
+
+      }
+    }
+
+    .burger{
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 900;
+      opacity: 0.7;
+    }
+  }
+  
+  .content_data{
+
+    .content{
+      width:100% ;
+      // width: 472px;
+      height:614px ;
+      // background-color: brown;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  .communication{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    gap: 20px;
+
+    
+    .comm1{
+      display: flex;
+      gap: 20px;
+      
+      svg{
+        width: 30px;
+        height: 30px;
+        color: #282828;
+      }
+    }
+
+    .comm2{
+
+      svg{
+        width: 30px;
+        height: 30px;
+        color: #282828;
+      }
+    }
+  }
+
+  .footer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    // top: 2rem;
+    border-bottom: 1px solid #dbdbdb;
+
+
+    .inputCommet{
+      width: 100%;
+      height: 56px;
+      border: none;
+      outline: none;
+    }
+
+    .button{
+      cursor: pointer;
+
+      svg{
+        color: #717171;
+      }
+    }
+  }
+
+}
+
+
+@media(max-width:555px){
+  .card{
+    width: 370px;
+    margin: auto;
+  }
+}
+
+@media(max-width:415px){
+  .card{
+    width: 290px;
+
+    .content_data{
+
+      .content{
+        height:414px ;
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.post_card_data {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 2rem;
+
+  .post_card_right{
+    img{
+      width: 470px;
+      height: 100%;
+      border-radius: 8px 0 0 8px;
+      object-fit: cover;
+    }
+  }
+
+  .post_card_left {
+    background-color: #fff;
+    width: 470px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 0 8px 8px 0;
+   
+    .post_card_header {
+      display: flex;
+      gap: 13px;
+      padding: 10px 15px;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      h3 {
+        margin: 3px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif;
+        cursor: pointer;
+      }
+    }
+    .post_card_body {
+      display: flex;
+      // align-items: center;
+      overflow-x: hidden;
+      height: 470px;
+      gap: 13px;
+      padding: 10px 15px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      h3 {
+        margin: 3px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif;
+        cursor: pointer;
+      }
+
+    }
+    .post_card_footer {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .likes_block {
+        display: flex;
+        justify-content: space-between;
+        .likes {
+          display: flex;
+          gap: 15px;
+          svg {
+            color: rgb(38, 38, 38);
+            font-size: 27px;
+            cursor: pointer;
+            transition: 0.1s;
+            &:hover {
+              color: gray;
+            }
+          }
+        }
+      }
+      .about_block {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        .count_of_likes {
+          span {
+            color: rgb(38, 38, 38);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+              sans-serif;
+          }
+        }
+        div {
+          p {
+            margin: 0;
+            color: rgb(38, 38, 38);
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+              sans-serif;
+            span {
+              cursor: pointer;
+            }
+            .more {
+              color: #8e8e8e;
+            }
+          }
+        }
+      }
+      .comment_block {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgb(197, 195, 195);
+        padding-top: 10px;
+        input {
+          border: 0;
+          outline: 0;
+          background: none;
+          color: rgb(38, 38, 38);
+        }
+        button {
+          background: none;
+          border: 0;
+          outline: 0;
+          color: #0095f6;
+          cursor: pointer;
+          &:disabled {
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

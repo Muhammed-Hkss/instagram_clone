@@ -1,0 +1,47 @@
+.recommend_container{
+  width: 100%;
+  height: 40vh;
+  // background-color: rgb(179, 4, 4);
+
+  .header{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    // border-bottom: 1px solid #dbdbdb;
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    .userLogo{
+      // border-radius: 50%;
+      margin-right: 20px;
+
+
+      .image{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    
+    .userData{
+      margin-right:auto ;
+
+      .userName{
+        font-weight: 700;
+      }
+
+      .userPosition{
+
+      }
+    }
+
+    .burger{
+      cursor: pointer;
+      font-size: 13px;
+      color: rgb(60, 144, 248);
+      font-weight: 500;
+      opacity: 0.7;
+    }
+  }
+}
