@@ -27,17 +27,21 @@ const Card = () => {
 
 
   useEffect(() => {
-		update()
-	}, [page , getPosts ])
-
-
-  function update() {
-		const base = getPosts?.slice(
+    const base = getPosts?.slice(
 			page ,
 			page * PAGE_SIZE,
 		)
 		setBase(base)
-	}
+	}, [page , getPosts ])
+
+  // useEffect(() => {
+  //   GetUsersId().then(r => {
+  //     setUsers(r.data)
+  //   })
+  // } ,[])
+
+
+
 
 
 
@@ -53,28 +57,11 @@ const Card = () => {
 		}
 	}
 
-	// function prevPagination(){
-	// 	if(page !== 1){
-	// 		setPage(page - 1)
-	// 	}else {
-	// 		setPage(TOTAL_PAGE)
-	// 	}
-	// }
-
-
-
-
-
-
-
-
   
   useEffect(() => {
     GetPosts(accessToken).then(r => {
       setGetPosts(r.data)
     })
-
-    
   } , [accessToken])
 
 
@@ -91,9 +78,9 @@ const Card = () => {
           
           
           // const curUser = () => {
-          //   GetUsersId(item.user).then(r => {
-          //     setUsers(r.data)
-          //   })
+            // GetUsersId(item.user).then(r => {
+            //   setUsers(r.data)
+            // })
           // }
           // console.log(item.user);
           
