@@ -32,7 +32,7 @@ const Card = () => {
 			page * PAGE_SIZE,
 		)
 		setBase(base)
-	}, [page , getPosts ])
+	}, [page , getPosts , PAGE_SIZE ])
 
   // useEffect(() => {
   //   GetUsersId().then(r => {
