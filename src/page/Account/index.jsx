@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineSetting } from 'react-icons/ai'
+import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
-import { GetUser } from '../../config'
+import { DelPost, GetUser } from '../../config'
 import { ProfileList } from '../../utils/Account'
 import {  getPostsOfTheUser } from '../../config/index';
 import cls from './Account.module.scss'
@@ -14,6 +15,10 @@ const Profile = () => {
   const [active, setActive] = React.useState('posts');
   const [users , setUsers] = useState('')
   const navigate = useNavigate()
+
+
+  // const [ popUpActive, setPopUpActive ] = React.useState(false)
+
 
 
   useEffect(() => {
@@ -31,6 +36,16 @@ const Profile = () => {
 
   
   console.log(posts);
+
+  // posts?.map(item => {
+  //   const DeletePost = () => {
+  //     DelPost(item.id , accessToken).then(() => {
+  //       getPostsOfTheUser(users.id).then(r => {
+  //         setPosts(r.data)
+  //       })
+  //     })
+  //   }
+  // })
   
   return (
     <div className={cls.container}>
@@ -107,15 +122,42 @@ const Profile = () => {
 
       <div className={cls.posts_data}>
         {
-          posts?.map(item => (
-            <div className={cls.posts} onClick={() => navigate(`/posts/${item.id}`)} key={item.id}>
+          posts?.map(item => {
+
+            
+            const DeletePost = () => {
+              DelPost(item.id , accessToken).then(() => {
+                getPostsOfTheUser(users.id).then(r => {
+                  setPosts(r.data)
+                })
+              })
+            }
+
+
+            return(
+            <div className={cls.posts} 
+            // onClick={() => navigate(`/posts/${item.id}`)}
+             key={item.id}>
               {
-                  item.post_images?.length >=1 ?
-                  <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
-                  <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
-                }
+                item.post_images?.length >=1 ?
+                <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
+                <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
+              }
+
+
+              <div >
+                <button 
+                  onClick={() => {
+                    DeletePost(item.id)
+                    // &&
+                    // window.location.reload();
+                  }}
+                >
+                  Delete post
+                </button>
+              </div> 
             </div>
-          ))
+          )})
         }
       </div>
     </div>

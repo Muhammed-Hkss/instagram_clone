@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { createImage, TocreatePost , TocreateStory } from '../../config';
+import useAlert from '../../hooks/UseAlert/useAlert';
 
 import cls from './ToCreate.module.scss'
 
@@ -13,6 +15,9 @@ const ToCreate = () => {
   // const [ urlFile, setUrlFile ] = useState(null)
   const [fileStory, setFileStory] = useState(null)
   const [value, setValue] = useState  ('')
+  const navigate = useNavigate()
+	const { actions } = useAlert()
+
 
   const handleCreatePost = () => {
     TocreatePost({title: value}, accessToken)
@@ -21,8 +26,11 @@ const ToCreate = () => {
       formData.append('image', file);
       formData.append('post', r.data.id)
       createImage(formData , accessToken)
-    })
+    }) 
   }
+
+  // && actions.sweetAlert('Добавлено в корзину')
+  // && navigate('/account')
 
 
 

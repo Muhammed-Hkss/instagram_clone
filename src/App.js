@@ -22,9 +22,9 @@ function App() {
   const accessToken = localStorage.getItem('accessToken')
   const navigate = useNavigate();
   
-  useEffect(() => {
-    accessToken && navigate('/');
-  }, [accessToken , navigate]);
+  // useEffect(() => {
+  //   accessToken && navigate('/');
+  // }, [accessToken , navigate]);
 
   return(
     <>
