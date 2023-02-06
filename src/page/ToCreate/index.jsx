@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createImage, TocreatePost , TocreateStory } from '../../config';
 
 import cls from './ToCreate.module.scss'
@@ -9,20 +9,17 @@ const ToCreate = () => {
 
 
   const accessToken = localStorage.getItem('accessToken')
-
-
-  const [ file, setFile ] = React.useState(null)
-
-
-  const [fileStory, setFileStory] = React.useState(null)
-  const [value, setValue] = React.useState('')
+  const [ file, setFile ] = useState(null)
+  // const [ urlFile, setUrlFile ] = useState(null)
+  const [fileStory, setFileStory] = useState(null)
+  const [value, setValue] = useState  ('')
 
   const handleCreatePost = () => {
     TocreatePost({title: value}, accessToken)
     .then(r => {
       const formData = new FormData()
-      formData.append('post', r.data.id)
       formData.append('image', file);
+      formData.append('post', r.data.id)
       createImage(formData , accessToken)
     })
   }
@@ -39,7 +36,6 @@ const ToCreate = () => {
 
 
 
-
     
 
 
@@ -49,11 +45,18 @@ const ToCreate = () => {
 
       <div className={cls.row}>
         <div className={cls.image_data}>
-          {/* <img src={!filePost && !fileStory ? "https://www.mediplus.nl/static/version1617954515/frontend/Totem/mediplus/nl_NL/Magento_Catalog/images/product/placeholder/image.jpg" : 
+          {/* <img src={!file && !fileStory ? "https://www.mediplus.nl/static/version1617954515/frontend/Totem/mediplus/nl_NL/Magento_Catalog/images/product/placeholder/image.jpg" : 
             !fileStory ? 
             URL.createObjectURL(filePost) : 
             URL.createObjectURL(fileStory)} alt="" 
           /> */}
+          {
+            !file && !fileStory ? 
+            <img src="https://www.mediplus.nl/static/version1617954515/frontend/Totem/mediplus/nl_NL/Magento_Catalog/images/product/placeholder/image.jpg" alt="" /> : 
+            !fileStory ?
+            <img src={`${file}`} alt="505" /> :
+            <img src={fileStory} alt="404" />
+          }
           
         </div>
         <div className={cls.input_for_posts}>

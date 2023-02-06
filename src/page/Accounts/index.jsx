@@ -50,8 +50,8 @@ const Accounts = () => {
 
   const un_Follow = () => {
     unFollow(Number(id), accessToken).then((r) => {
-      setFollow(false);
-    });
+    setFollow(false);
+  });
 
     
     getPostsOfTheUser(id).then(r => {
@@ -61,7 +61,6 @@ const Accounts = () => {
 
 
 
-console.log(follow);
 
   
 
@@ -143,7 +142,6 @@ console.log(follow);
         <div className={cls.posts_data}>
           {
             posts?.map(item =>{ 
-              console.log(item.post_images[0]?.image);
               return(
               <div className={cls.posts} onClick={() => navigate(`/posts/${item.id}`)} key={item.id}>
                 {

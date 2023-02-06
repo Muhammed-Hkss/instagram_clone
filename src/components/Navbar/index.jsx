@@ -49,7 +49,6 @@ function Navbar() {
 
   const SearchUsers = users && users.filter(item =>item.username.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ? item : null)
   
-  console.log(SearchUsers);
 
   const isMobile = useMediaQuery({
     query: "(max-width: 770px)"

@@ -27,7 +27,6 @@ const Edit = () => {
     })
   } , [accessToken , users.id])
 
-  console.log(users);
 
   const onSubmit = (data) => {
     putUser(users.id, data, accessToken).then((r) => {

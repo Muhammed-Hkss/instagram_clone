@@ -9,7 +9,6 @@ const Login = () => {
   const navigate = useNavigate()
   
 
-
   const {
     register,
     handleSubmit,
@@ -23,10 +22,12 @@ const Login = () => {
     if(data){
       Token(data).then(r => {
         if(r.data){
-          localStorage.setItem('accessToken', r.data.access)
-          navigate('/')
+          localStorage.setItem('accessToken', r.data.access);
+          localStorage.setItem('refreshToken', r.data.refresh);
+          navigate('/');
         }
-      })
+      }).catch((e) => window.alert(e));
+      // window.location.reload();
     }
   }
 

@@ -12,7 +12,6 @@ const MoreStories = () => {
   const { id } = useParams();
 
 
-  console.log(moreStories);
     
   useEffect(() => {
     getMoreStories(accessToken).then((r) => {

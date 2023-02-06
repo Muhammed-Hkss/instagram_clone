@@ -11,7 +11,6 @@ const Slider = () => {
   const [allStories, setAllStories] = React.useState(null);
   const navigate = useNavigate();
 
-  console.log(allStories);
 
 
   React.useEffect(() => {

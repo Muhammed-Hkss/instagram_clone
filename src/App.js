@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './apps/Login';
 import Register from './apps/Registert';
@@ -19,7 +20,11 @@ import ToCreate from './page/ToCreate';
 
 function App() {
   const accessToken = localStorage.getItem('accessToken')
-
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    accessToken && navigate('/');
+  }, [accessToken]);
 
   return(
     <>

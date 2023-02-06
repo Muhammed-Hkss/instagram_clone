@@ -15,7 +15,6 @@ const Subscriptions = () => {
       );
     }, [id]);
 
-    console.log(data);
 
   if(!data) return <div><h1>ssdsddsddfhdfhhdf</h1></div>
   return (

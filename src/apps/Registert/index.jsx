@@ -118,7 +118,6 @@ const Register = () => {
           <Link to='/auth/login'>Есть аккаунт? Вход</Link>
         </div>
 
-        {/* style={{color:'gray' , textAlign:'center'}}  */}
         <p  className={cls.dowlooad_text}>Установите приложение.</p>
 
         <div className={cls.dowlooad_image_data}>

@@ -1,29 +1,37 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { deleteLike, getComments, getSinglePost, postComments, postLike } from '../../config';
+import { deleteLike, getComments, getSinglePost, GetUsersId, postComments, postLike } from '../../config';
 import cls from './MorePosts.module.scss'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { FiMessageCircle, FiSend } from 'react-icons/fi';
 import { BsBookmark } from 'react-icons/bs';
+import { useState } from 'react';
 
 
 const MorePosts = () => {
   const accessToken = localStorage.getItem('accessToken');
-  const [data, setData] = React.useState(null);
-  const { id } = useParams();
   const navigate = useNavigate();
-  const [isLiked, setIsLiked] = React.useState(false);
-  const [commentsData, setCommentsData] = React.useState(null);
-  const [comments, setComments] = React.useState(false);
-  const [comValue, setComValue] = React.useState('');
+  const { id } = useParams();
+  const [data , setData] = useState(null);
+  const [isLiked , setIsLiked] = useState(false);
+  const [commentsData , setCommentsData] =  useState(null);
+  const [comments , setComments] = useState(false);
+  const [comValue , setComValue] = useState('');
+  const [curUser , setCurUser] = useState('')
 
 
-  console.log(data);
 
 
   useEffect(() => {
     getSinglePost(id, accessToken).then((r) => setData(r.data));
   }, [accessToken , id]);
+
+
+  useEffect(() => {
+    GetUsersId(data?.user).then(r => {
+      setCurUser(r.data)
+    })
+  } , [])
 
   const handleLike = (id) => {
     postLike({ post: Number(id) }, accessToken);
@@ -42,7 +50,10 @@ const MorePosts = () => {
     .then(r => console.log(r.data))
   };
 
+console.log(curUser);
 
+// if (!productBase) return <div className={cls.loading}><Loader/></div>
+if (!data && !curUser) return <div style={{textAlign:'center'}}>loading....</div>
 
   return (
     <div className={cls.post_card_data}>
@@ -60,10 +71,12 @@ const MorePosts = () => {
         <div className={cls.post_card_header}>
           <img
             onClick={() => navigate(`/users/${data?.user}`)}
-            src="https://animeblurayuk.files.wordpress.com/2018/08/black-clover-season1-part1-screenshot1.jpg"
+            // src="https://animeblurayuk.files.wordpress.com/2018/08/black-clover-season1-part1-screenshot1.jpg"
+            src={curUser?.avatar}
             alt=""
           />
-          <h3 onClick={() => navigate(`/users/${data?.user}`)}>user</h3>
+          <h3 onClick={() => navigate(`/users/${data?.user}`)}>{curUser?.username}</h3>
+          <h3>{data?.title}</h3>
         </div>
         <div className={cls.post_card_body}>
           <img

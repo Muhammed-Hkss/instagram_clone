@@ -29,7 +29,9 @@ const Profile = () => {
     })
   } , [users.id])
 
-
+  
+  console.log(posts);
+  
   return (
     <div className={cls.container}>
       <div className={cls.profile_header_data}>
