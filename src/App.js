@@ -24,7 +24,7 @@ function App() {
   
   useEffect(() => {
     accessToken && navigate('/');
-  }, [accessToken]);
+  }, [accessToken , navigate]);
 
   return(
     <>

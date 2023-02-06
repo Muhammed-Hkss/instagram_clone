@@ -31,7 +31,7 @@ const MorePosts = () => {
     GetUsersId(data?.user).then(r => {
       setCurUser(r.data)
     })
-  } , [])
+  } , [data?.user])
 
   const handleLike = (id) => {
     postLike({ post: Number(id) }, accessToken);
