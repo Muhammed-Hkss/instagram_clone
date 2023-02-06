@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { createImage, TocreatePost , TocreateStory } from '../../config';
 import useAlert from '../../hooks/UseAlert/useAlert';
@@ -12,7 +12,7 @@ const ToCreate = () => {
 
   const accessToken = localStorage.getItem('accessToken')
   const [ file, setFile ] = useState(null)
-  // const [ urlFile, setUrlFile ] = useState(null)
+  const [ refresh, setRefresh ] = React.useState('')
   const [fileStory, setFileStory] = useState(null)
   const [value, setValue] = useState  ('')
   const navigate = useNavigate()
@@ -26,8 +26,14 @@ const ToCreate = () => {
       formData.append('image', file);
       formData.append('post', r.data.id)
       createImage(formData , accessToken)
-    }) 
+    }) && actions.sweetAlert('Добавлено')
+    // setTimeout(() => {
+    //   setRefresh('hello')
+    // }, 10000) 
+    // && navigate('/account')
   }
+
+
 
   // && actions.sweetAlert('Добавлено в корзину')
   // && navigate('/account')
