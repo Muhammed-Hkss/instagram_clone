@@ -1,8 +1,8 @@
                             ------------ bitirmem gerekenler ------------
 
-0) // postlari profilde almam lazim ve // silme butonu yapmam lazim  
+0) // postlari profilde almam lazim ve // silme butonu yapmam lazim  \/
 
-1) post_images duzeltmek 
+1) post_images duzeltmek   \/
 
 2) yana kaydirma stileri ile oynamam lazim 
 
@@ -10,22 +10,24 @@
 
 4) register ve login deki bug u duzeltmem lazim 
 
-5) change profile yapmam lazim
+5) change profile yapmam lazim \/
 
 6) post i duzeltmem gerek yani cardlari 
 
-7) storis baslamam lazim 
+7) storis baslamam lazim  \/
 
-8) logi nve register ici nvalidatsa
+8) logi nve register icin validatsa
 
 9) adaptivka site
 
 
 
 
-"eslintConfig": {
-  "extends": [
-    "react-app",
-    "react-app/jest"
-  ]
-},
+
+
+
+
+
+
+
+harsheyi duzeltmem gerekiyor

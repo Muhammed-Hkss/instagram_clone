@@ -57,8 +57,8 @@ const Search = ({setSearch}) => {
       
       <ul  className={cls.search_users_data}>
           {
-          debouncedSearchTerm.length < 3 ? '' :
-            SearchUsers.length < 3 ?
+          debouncedSearchTerm.length < 2 ? '' :
+            SearchUsers.length < 2 ?
 
 
             SearchUsers && SearchUsers.map(item => {

@@ -22,7 +22,7 @@
         height: 32px;
         border-radius: 50%;
         object-fit: cover;
-
+        cursor: pointer;
       }
     }
     
@@ -53,6 +53,7 @@
       height:614px ;
       border-radius: 8px;
       object-fit: cover;
+      cursor: pointer;
     }
   }
 
@@ -68,20 +69,35 @@
     .comm1{
       display: flex;
       gap: 20px;
-      
-      svg{
-        width: 30px;
-        height: 30px;
-        color: #282828;
+      margin: 0;
+      padding: 0;
+
+      li{
+        list-style: none;
+
+
+        svg{
+          width: 30px;
+          height: 30px;
+          color: #282828;
+        }
       }
+      
     }
 
     .comm2{
+      margin: 0;
+      padding: 0;
 
-      svg{
-        width: 30px;
-        height: 30px;
-        color: #282828;
+      li{
+        list-style: none;
+
+        
+        svg{
+          width: 30px;
+          height: 30px;
+          color: #282828;
+        }
       }
     }
   }

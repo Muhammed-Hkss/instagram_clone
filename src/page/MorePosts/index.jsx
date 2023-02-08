@@ -6,6 +6,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { FiMessageCircle, FiSend } from 'react-icons/fi';
 import { BsBookmark } from 'react-icons/bs';
 import { useState } from 'react';
+import Loading from '../../components/Loading';
 
 
 const MorePosts = () => {
@@ -53,7 +54,7 @@ const MorePosts = () => {
 console.log(curUser);
 
 // if (!productBase) return <div className={cls.loading}><Loader/></div>
-if (!data && !curUser) return <div style={{textAlign:'center'}}>loading....</div>
+if (!data && !curUser) return <div style={{textAlign:'center'}}><Loading /></div>
 
   return (
     <div className={cls.post_card_data}>
@@ -62,7 +63,7 @@ if (!data && !curUser) return <div style={{textAlign:'center'}}>loading....</div
           src={
             data?.post_images?.length >= 1
               ? data?.post_images[0]?.image
-              : 'https://www.desktopbackground.org/download/1920x1080/2013/10/16/655112_top-one-piece-boss-luffy-wallpapers_1920x1080_h.jpg '
+              : 'https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-32.jpeg'
           }
           alt=""
         />
