@@ -105,36 +105,39 @@
 
 
 
-        .posts_data{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 20px ;
+        // .posts_data{
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        //   flex-wrap: wrap;
+        //   gap: 20px ;
       
-          .posts {
+        //   .posts {
       
-            img {
-              width: 300px;
-              height: 300px;
-              object-fit: cover;
-              cursor: pointer;
-            }
-          }
-        }
+        //     img {
+        //       width: 300px;
+        //       height: 300px;
+        //       object-fit: cover;
+        //       cursor: pointer;
+        //     }
+        //   }
+        // }
 
         
-        .posts{
+        // .posts{
+        //   width: 300px;
+        //   height: 300px;
           
-          .post{
+        //   .post{
+        //     width: 300px;
+        //     height: 300px;
             
-            
-            img{
-              width: 300px;
-              height: 300px;
-            }
-          }
-        }
+        //     .post_img{
+        //       width: 300px;
+        //       height: 300px;
+        //     }
+        //   }
+        // }
       }
       .span_active{
         padding: 10px 0 0 0 ;
@@ -145,23 +148,41 @@
     }
   }
 
-  // .posts_data{
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-  //   gap: 20px ;
+  .posts_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px ;
 
-  //   .posts {
+    .posts {
 
-  //     img {
-  //       width: 300px;
-  //       height: 300px;
-  //       object-fit: cover;
-  //       cursor: pointer;
-  //     }
-  //   }
-  // }
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .saved_post_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px ;
+
+    .saved_posts {
+
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media(max-width: 1024px){

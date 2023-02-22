@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getMoreStories } from '../../config'
+import { useNavigate, useParams } from 'react-router-dom'
+import { DelStories, getMoreStories } from '../../config'
 import { BiX } from 'react-icons/bi';
 import cls from './getMoreStories.module.scss'
 
@@ -10,6 +10,7 @@ const MoreStories = () => {
   const accessToken = localStorage.getItem('accessToken');  
   const [moreStories , setMoreStories] = useState('')
   const { id } = useParams();
+  const navigate = useNavigate()
 
 
     
@@ -18,6 +19,41 @@ const MoreStories = () => {
       setMoreStories(r.data?.filter((item) => item?.id === Number(id))[0]);
     });
   }, [accessToken , id]);
+
+
+
+
+  const [ storyId, setStoryId ] = React.useState(0)
+
+
+
+
+  const delete_story = (id) => {
+    DelStories(accessToken, id)
+    if(storyId === moreStories?.length || storyId + 1 === moreStories?.length){
+      // setActive(false)
+      navigate('/')
+    }
+    // else{
+    //   setStoryId(storyId + 1)
+    // }
+  }
+
+
+   const delete_story2 = () => {
+    DelStories(accessToken, moreStories?.id)
+    if(moreStories?.id){
+      navigate('/')
+    }
+  }
+
+
+  console.log(storyId);
+
+
+
+
+
 
 
 
@@ -30,7 +66,7 @@ const MoreStories = () => {
             <img className={cls.avatar} src="" alt="" />
           </div>
           <div className={cls.bix_btn_data}>
-            <BiX />
+            <BiX onClick={() => delete_story2(moreStories?.id)} />
           </div>
         </div>
 

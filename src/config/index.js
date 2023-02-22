@@ -37,19 +37,9 @@ export const api = {
   postFollow : (data, accessToken) => instance.post('follow/', data, token(accessToken)),
   unFollow : (id, accessToken) => instance.delete(`follow/${id}`, token(accessToken)),
   getSaves : (id , accessToken) => instance.get(`/users/${id}/saves/`, token(accessToken)),
-
-
-
-
-
-
   dislike : (id , accessToken) => instance.delete(`/likes/${id}/`, token(accessToken)),
-
   getLikes : (id) => instance.get(`/users/${id}/likes/`),
-
-
   PostSave : (data , accessToken) => instance.post('/saves/', data , token(accessToken)),
-
   UnSave : (id , accessToken) => instance.get(`/saves/${id}/`, token(accessToken)),
 }
 
@@ -72,18 +62,6 @@ export const GetUser = (accessToken) => instance.get(`/users/current_user/`, tok
 
 
 
-
-
-
-
-
-
-// getLikes: (id) => axios.get(`/users/${id}/likes/`),
-// dislike: (accessToken, id) => axios.delete(`/likes/${id}/`, {
-//   headers: {
-//     'Authorization': `Bearer ${accessToken}`
-//   }
-// }),
 
 
 
@@ -116,13 +94,6 @@ export const UnSave = (accessToken, id) => instance.delete(`/saves/${id}/`, toke
 
 
 
-// export const savessss = (accessToken, data) => instance.post('/saves/', data , {
-//   headers: {
-//     'Authorization': `Bearer ${accessToken}`
-//   }
-// })
-
-
 
 
 
@@ -144,8 +115,6 @@ export const PostImages = (accessToken) => instance.post('/images/', token(acces
 export const getSinglePost = (id, accessToken) => instance.get(`posts/${id}`, token(accessToken))
 export const postLike = (data, accessToken) => instance.post('likes/', data, token(accessToken))
 export const deleteLike = (id, accessToken) => instance.delete(`likes/${id}`, token(accessToken))
-export const getComments = (id, accessToken) => instance.get(`posts/${id}/comments`, token(accessToken))
-export const postComments = (data, accessToken) => instance.post('comments/', data, token(accessToken))
 export const putUser = (id, data, accessToken) => instance.put(`users/${id}/`, data, token(accessToken))
 export const postFollow = (data, accessToken) => instance.post('follow/', data, token(accessToken))
 export const unFollow = (id, accessToken) => instance.delete(`follow/${id}`, token(accessToken))
@@ -164,16 +133,22 @@ export const unFollow = (id, accessToken) => instance.delete(`follow/${id}`, tok
 
 
 
+export const DelStories = (accessToken, id) => instance.delete(`/stories/${id}/` , token(accessToken))
 
 
 
 
 
+export const PostComments = (accessToken, data) => instance.post('/comments/' , data , token(accessToken))
 
 
 
 
 
+export const deleteComment = (accessToken, id) => instance.delete(`/comments/${id}/` , token(accessToken))
 
 
-// export const getUsersPosts = (id) => axios.get(`/users/${id}/posts/`)
+
+export const getComments = (id) => instance.get(`/posts/${id}/comments/`)
+
+// export const getComments = (id, accessToken) => instance.get(`posts/${id}/comments`, token(accessToken))

@@ -18,7 +18,7 @@ const Login = () => {
   })
 
 
-    const onSubmit = (data) => {
+  const onSubmit = (data) => {
     if(data){
       Token(data).then(r => {
         if(r.data){
@@ -27,7 +27,6 @@ const Login = () => {
           navigate('/');
         }
       }).catch((e) => window.alert(e));
-      // window.location.reload();
     }
   }
 

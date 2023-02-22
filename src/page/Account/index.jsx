@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineSetting } from 'react-icons/ai'
-import { BiDotsHorizontalRounded } from 'react-icons/bi'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { DelPost, GetPosts, getSaves, GetUser } from '../../config'
 import { ProfileList } from '../../utils/Account'
 import {  getPostsOfTheUser } from '../../config/index';
@@ -14,6 +13,7 @@ const Profile = () => {
   const [posts, setPosts] = React.useState(null);
   const [active, setActive] = React.useState('posts');
   const [users , setUsers] = useState('')
+  const [ saves, setSaves ] = React.useState(null)
   const navigate = useNavigate()
 
 
@@ -31,34 +31,8 @@ const Profile = () => {
     getPostsOfTheUser(users.id).then(r => {
       setPosts(r.data)
     })
-  } , [users.id])
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const [ saves, setSaves ] = React.useState(null)
-
-
-  useEffect(() => {
-    // getUser()
-    
     let savedPosts = []
 
     getSaves(accessToken, users.id)
@@ -73,17 +47,32 @@ const Profile = () => {
           setSaves(savedPosts.reverse())
       })
     })
-
-      // getSaves(accessToken, users.id).then(r => {
-      //   setSaves(r)
-      // })
-  }, [users.id])
+  } , [users.id])
 
 
-  console.log(active);
 
 
-// console.log(saves);
+
+  // useEffect(() => {
+  //   let savedPosts = []
+
+  //   getSaves(accessToken, users.id)
+  //   .then(saves => {
+  //     GetPosts(accessToken)
+  //     .then(res => {
+  //         res.data.map(item => {
+  //           return saves.data?.map(save => {
+  //             return save.post === item.id ? savedPosts.push(item) : null
+  //           })
+  //         })
+  //         setSaves(savedPosts.reverse())
+  //     })
+  //   })
+  // }, [users.id])
+
+
+
+
 
 
 
@@ -165,144 +154,78 @@ const Profile = () => {
                 onClick={() => setActive(item.setActive)}
               >
                 {item.logo} {item.title}
-
-                {
-                  active === 'posts' ? 
-                  <div className={cls.posts_data}>
-                    {
-                      posts?.map(item => {
-
-                        
-                        const DeletePost = () => {
-                          DelPost(item.id , accessToken).then(() => {
-                            getPostsOfTheUser(users.id).then(r => {
-                              setPosts(r.data)
-                            })
-                          })
-                        }
-
-
-                        return(
-                        <div className={cls.posts} 
-                        // onClick={() => navigate(`/posts/${item.id}`)}
-                        key={item.id}>
-                          {
-                            item.post_images?.length >=1 ?
-                            <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
-                            <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
-                          }
-
-
-                          <div >
-                            <button 
-                              onClick={() => {
-                                DeletePost(item.id)
-                                // &&
-                                // window.location.reload();
-                              }}
-                            >
-                              Delete post
-                            </button>
-                          </div> 
-                        </div>
-                      )})
-                    }
-                  </div>
-                  : 
-                  <div className={cls.posts}>
-                    {
-                      saves?.length === 0 ?
-                      <h3>
-                        NO SAVED POSTS
-                      </h3>
-                      :
-                      saves?.map(item => (
-                        <div className={cls.post}> 
-                          <Link 
-                            to={`/p/${item.id}`}
-                            onClick={() => localStorage.setItem('userId', users?.id)}
-                          >
-                            <img 
-                              src={item.post_images[0]?.image ? item.post_images[0]?.image : 'https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-32.jpeg'}
-                              alt={item?.title}
-                            /> 
-                          </Link >
-                        </div>
-                      ))
-                    }
-                  </div>
-                }
               </span>
             ))
           }
         </div>
       </div>
 
-      {/* <div className={cls.posts_data}>
-        {
-          posts?.map(item => {
+      {
+        active === 'posts' ? 
+        <div className={cls.posts_data}>
+          {
+            posts?.map(item => {
 
-            
-            const DeletePost = () => {
-              DelPost(item.id , accessToken).then(() => {
-                getPostsOfTheUser(users.id).then(r => {
-                  setPosts(r.data)
-                })
-              })
-            }
-
-
-            return(
-            <div className={cls.posts} 
-            // onClick={() => navigate(`/posts/${item.id}`)}
-             key={item.id}>
-              {
-                item.post_images?.length >=1 ?
-                <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
-                <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
+              
+              const DeletePost = () => {
+                            DelPost(item.id , accessToken).then(() => {
+                              getPostsOfTheUser(users.id).then(r => {
+                                setPosts(r.data)
+                              })
+                            })
               }
 
 
-              <div >
-                <button 
-                  onClick={() => {
-                    DeletePost(item.id)
-                    // &&
-                    // window.location.reload();
-                  }}
+              return(
+                <div className={cls.posts} 
+                // onClick={() => navigate(`/posts/${item.id}`)}
+                  key={item.id}
                 >
-                  Delete post
-                </button>
-              </div> 
-            </div>
-          )})
-        }
-      </div> */}
+                  {
+                    item.post_images?.length >=1 ?
+                    <img src={`${BASE_URL}${item.post_images[0]?.image}`} alt="404" /> :
+                    <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
+                  }
 
 
-
-      {/* <div className={cls.posts}>
-        {
-          saves?.length === 0 ?
-          <h3>
-            NO SAVED POSTS
-          </h3>
-          :
-          saves?.map(item => (
-            <div className={cls.post}> 
-              <Link 
-                to={`/p/${item.id}`}
-                onClick={() => localStorage.setItem('userId', users?.id)}
+                  <div >
+                    <button 
+                      onClick={() => {
+                        DeletePost(item.id)
+                        // &&
+                        // window.location.reload();
+                      }}
+                    >
+                      Delete post
+                    </button>
+                  </div> 
+                </div>
+            )})
+          }
+        </div>
+        : 
+        <div className={cls.saved_post_data}>
+          {
+            saves?.length === 0 ?
+            <h3>
+              NO SAVED POSTS
+            </h3>
+            :
+            saves?.map(item => (
+              <div className={cls.saved_posts} 
+                onClick={() => navigate(`/posts/${item.id}`)}
+                key={item.id}
               >
-                <img 
-                  src={item.post_images[0]?.image ? item.post_images[0]?.image : 'https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-32.jpeg'}
-                  alt={item?.title}
-                /> 
-              </Link >
-            </div>
-          ))
-        }
-      </div> */}
+                {
+                  item.post_images?.length >=1 ?
+                  <img src={item.post_images[0]?.image} alt="404" /> :
+                  <img src='https://pbs.twimg.com/media/ErBPC3MXUAYsTq1.jpg' alt="" />
+                }
+              </div>
+            ))
+          }
+        </div>
+      }
     </div>
   )
 }

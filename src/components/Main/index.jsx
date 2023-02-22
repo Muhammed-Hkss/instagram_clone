@@ -18,6 +18,9 @@ const Main = () => {
   const [ likes, setLikes ] = useState(null)
   let PAGE_SIZE = 9
 	const TOTAL_PAGE = Math.ceil(getPosts?.length / PAGE_SIZE)
+
+
+
   
   
   const [ refresh, setRefresh ] = useState('')
@@ -58,7 +61,7 @@ const Main = () => {
       setUsers(r.data)
     })
 
-    getSaves(currentUser?.id , accessToken)
+    getSaves(accessToken , currentUser?.id  )
     .then(res => {
       setSaves(res.data)
     })
@@ -67,11 +70,6 @@ const Main = () => {
     .then(res => {
       setLikes(res.data)
     })
-
-
-    
-
-
   } , [data])
 
 
@@ -82,18 +80,13 @@ const Main = () => {
 
 
 
-useEffect(() => {
-  GetUser(accessToken).then(r => {
-    setCurretnUser(r.data)
-  })
-} , [accessToken])
+  useEffect(() => {
+    GetUser(accessToken).then(r => {
+      setCurretnUser(r.data)
+    })
+  } , [accessToken])
 
   
-
-
-
-
-
 
 
   if (!data) return <div style={{position:'relative' , top:'20rem' , textAlign:'center'}}><Loading /></div>
@@ -105,7 +98,6 @@ useEffect(() => {
         
         <div className={cls.slider_card}>
           <Slider />
-
           {
             data && data.map(item => (
               <Card key={item.id} likes={likes} data={data} saves={saves} setRefresh={setRefresh} refresh={refresh} item={item} users={users} />
@@ -118,9 +110,8 @@ useEffect(() => {
           >
             <BiMessageAltAdd />
           </button>
-
-
         </div>
+        
         <div className={cls.recommendations}>
           <Recommendations />
         </div>

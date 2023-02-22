@@ -11,22 +11,10 @@ const Card = ({item , users , refresh , likes , setRefresh , saves}) => {
   const navigate = useNavigate()
   const accessToken = localStorage.getItem('accessToken')   
   const [CurUser , setCurUser] = useState('')
-
-
-
   const [ savedStatus, setSavedStatus ] = React.useState(false)
-
   const [ savedId, setSavedId ] = useState('')
-
-
-
-
-
   const [ likedStatus, setLikedStatus ] = React.useState(false)
-
   const [ likedId, setLikedId ] = React.useState('')
-
-
 
 
   const like = (id) => {
@@ -37,8 +25,6 @@ const Card = ({item , users , refresh , likes , setRefresh , saves}) => {
     DisLike(accessToken, id)
   }
 
-
-
   const save = (id) => {
     PostSave(accessToken, {post: id})
   }
@@ -47,10 +33,6 @@ const Card = ({item , users , refresh , likes , setRefresh , saves}) => {
     UnSave(accessToken, id)
   }
 
-
-
-
-  
 
   useEffect(() => {
     const likedState = likes?.find(likes => likes.post === item.id ? setLikedStatus(true) : '')
@@ -114,9 +96,7 @@ const Card = ({item , users , refresh , likes , setRefresh , saves}) => {
             </li>
 
             <li>
-              {/* <Link to={`/p/${item.id}`}> */}
-                <FiMessageCircle />
-              {/* </Link> */}
+              <FiMessageCircle />
             </li>
             <li>
               <FiSend />

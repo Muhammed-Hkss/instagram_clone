@@ -13,13 +13,10 @@ import { GetUsers } from '../../config'
 function Navbar() {
   const [active, setActive] = useState('home')
   const [search, setSearch] = useState(false)
-  // const [value, setValue] = useState('')
-  // const inputRef = useRef(null)
   const accessToken = localStorage.getItem('accessToken')
   const navigate = useNavigate()
   const [users , setUsers] = useState(null)
   const [username, setUsername] = useState("");
-
 
   
 
@@ -105,7 +102,7 @@ function Navbar() {
               className={debouncedSearchTerm.length < 2 ? `${cls.active}` : `${cls.search_users_data}`}
             >
               {
-              debouncedSearchTerm.length < 2 ? '' :
+                debouncedSearchTerm.length < 2 ? '' :
                 SearchUsers.length < 2 ?
 
 
